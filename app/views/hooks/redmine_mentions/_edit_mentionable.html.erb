@@ -1,4 +1,4 @@
-<% if @project.try(:text_formatting) != 'CKEditor' || @issue.try(:text_formatting) != 'CKEditor' %>
+<% unless @project.try(:text_formatting) == 'CKEditor' or @issue.try(:text_formatting) == 'CKEditor' %>
 <%= javascript_include_tag 'jquery.textcomplete.js', :plugin => 'redmine_mentions' %>
 <%= javascript_include_tag 'jquery.overlay.js', :plugin => 'redmine_mentions' %>
 <%= stylesheet_link_tag 'auto_complete.css', :plugin => 'redmine_mentions' %>
